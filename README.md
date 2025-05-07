@@ -1,5 +1,5 @@
 # Ex.08 Design of Interactive Image Gallery
-## Date:
+## Date:7/05/2025
 
 ## AIM:
 To design a web application for an inteactive image gallery with minimum five images.
@@ -25,8 +25,102 @@ Validate the HTML and CSS code.
 Publish the website in the given URL.
 
 ## PROGRAM :
+```
+file.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>MARVEL</h1>
+    </header>
+    <div class="gallery">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="marvel.png" height="300px" width="300px">
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="marvel1.png" height="300px" width="300px" >
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="marvel2.png" height="300px" width="300px">
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="marvel3.png" height="300px" width="300px">
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="marvel5.png" height="300px" width="300px">
+        </div>
+    </div>
 
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
+    <script src="style.js"></script>
+</body>
+</html>
+
+style.js
+function openModal(element) {
+    const modal = document.getElementById("modal");
+    const modalImage = document.getElementById("modalImage");
+    const caption = document.getElementById("caption");
+
+    modal.style.display = "flex";
+    modalImage.src = element.querySelector("img").src;
+    caption.textContent = element.querySelector("img").alt;
+}
+
+function closeModal() {
+    const modal = document.getElementById("modal");
+    modal.style.display = "none";
+}
+style.css
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center; /* Aligns items horizontally */
+    flex-wrap: wrap;         /* Allows wrapping if the row is too long */
+    gap: 10px;               /* Space between items */
+    padding: 20px;
+}
+
+.gallery-item img {
+    width: 200px; /* Set image width */
+    height: 200px;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+```
 ## OUTPUT:
+![alt text](<Screenshot 2025-05-07 054333.png>)
+
+![alt text](<Screenshot 2025-05-07 054348.png>)
 
 ## RESULT:
 The program for designing an interactive image gallery using HTML, CSS and JavaScript is executed successfully.

@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center; /* Aligns items horizontally */
+    flex-wrap: wrap;         /* Allows wrapping if the row is too long */
+    gap: 10px;               /* Space between items */
+    padding: 20px;
+}
+
+.gallery-item img {
+    width: 200px; /* Set image width */
+    height: 200px;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
